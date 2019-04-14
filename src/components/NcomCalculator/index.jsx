@@ -1,14 +1,12 @@
 import React, { useState } from "react";
+import ComplexNumber from "./components/ComplexNumber";
 
 function NcomCalculator() {
-  const [operation, setOperation] = useState("");
+  const initialNumbers = [ComplexNumber, ComplexNumber];
 
-  return (
-    <div>
-      <input type="text" onChange={e => setOperation(e.target.value)} />
-      <span>={operation}</span>
-    </div>
-  );
+  const [numbers] = useState(initialNumbers);
+
+  return <div>{numbers.map(number => number())}</div>;
 }
 
 export default NcomCalculator;
