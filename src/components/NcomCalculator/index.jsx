@@ -1,7 +1,12 @@
 import React from "react";
 
 function NcomCalculator() {
-  return <h2>Ncom Calulator</h2>;
+  return (
+    <div>
+      <input type="text" />
+      <span>=0</span>
+    </div>
+  );
 }
 
 export default NcomCalculator;
