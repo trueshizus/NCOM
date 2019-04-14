@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import ComplexNumber from "./components/ComplexNumber";
 
 function NcomCalculator() {
-  return (
-    <div>
-      <input type="text" />
-      <span>=0</span>
-    </div>
-  );
+  const initialNumbers = [ComplexNumber, ComplexNumber];
+
+  const [numbers] = useState(initialNumbers);
+
+  return <div>{numbers.map(number => number())}</div>;
 }
 
 export default NcomCalculator;
