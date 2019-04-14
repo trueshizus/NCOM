@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 function NcomCalculator() {
+  const [operation, setOperation] = useState("");
+
   return (
     <div>
-      <input type="text" />
-      <span>=0</span>
+      <input type="text" onChange={e => setOperation(e.target.value)} />
+      <span>={operation}</span>
     </div>
   );
 }
