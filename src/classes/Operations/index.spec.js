@@ -1,4 +1,5 @@
 import Operations from './index';
+import ComplexNumber from '../complexNumber';
 
 describe('Operation', () => {
   describe('parseInput', () => {
@@ -33,4 +34,33 @@ describe('Operation', () => {
       expect(result.imaginary).toEqual(1);
     });
   });
+
+  describe('add', () => {
+    it('sum two complex numbers', () => {
+      const firstComplex = new ComplexNumber('(2, 2)');
+      const secondComplex = new ComplexNumber('(1, -1)');
+
+      const result = Operations.add(firstComplex, secondComplex);
+
+      expect(result).toEqual(new ComplexNumber('(3, 1)'));
+    });
+  });
+
+  describe('sum', () => {
+    const firstComplex = new ComplexNumber('(2, 2)');
+    const secondComplex = new ComplexNumber('(1, -1)');
+    const thirdComplex = new ComplexNumber('(1, -1)');
+
+    const result = Operations.sum(firstComplex, secondComplex, thirdComplex);
+    expect(result).toEqual(new ComplexNumber('(4,0)'));
+  });
+
+  describe('multiply', () => {
+    const firstComplex = new ComplexNumber('(2, 1)');
+    const secondComplex = new ComplexNumber('(2, 1)');
+
+    const result = Operations.multiply(firstComplex, secondComplex);
+    expect(result).toEqual(new ComplexNumber('(3,4)'));
+  });
+  describe('sum', () => {});
 });
