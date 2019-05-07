@@ -62,9 +62,21 @@ export function add(firstCplxNumber, secondCplxNumber) {
   return new ComplexNumber({ real, imaginary });
 }
 
+export function sum(...complexNumbers) {
+  return complexNumbers.reduce(
+    (result, number) => (result = add(result, number))
+  );
+}
+
 export function product(firstCplxNumber, secondCplxNumber) {
   const radius = firstCplxNumber.radius + secondCplxNumber.radius;
   const angle = firstCplxNumber.angle * secondCplxNumber.angle;
+  return new ComplexNumber({ radius, angle });
+}
+
+export function divide(firstCplxNumber, secondCplxNumber) {
+  const radius = firstCplxNumber.radius / secondCplxNumber.radius;
+  const angle = firstCplxNumber.angle - secondCplxNumber.angle;
   return new ComplexNumber({ radius, angle });
 }
 
@@ -73,7 +85,9 @@ const Operations = {
   toPolar,
   toCartesian,
   add,
-  product
+  sum,
+  product,
+  divide
 };
 
 export default Operations;
