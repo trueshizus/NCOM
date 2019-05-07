@@ -52,10 +52,16 @@ describe('Operation', () => {
     const thirdComplex = new ComplexNumber('(1, -1)');
 
     const result = Operations.sum(firstComplex, secondComplex, thirdComplex);
-
     expect(result).toEqual(new ComplexNumber('(4,0)'));
   });
 
-  describe('product', () => {});
+  describe('multiply', () => {
+    const firstComplex = new ComplexNumber('(2, 1)');
+    const secondComplex = new ComplexNumber('(2, 1)');
+
+    const result = Operations.multiply(firstComplex, secondComplex);
+    expect(result).toEqual(new ComplexNumber('(3,4)'));
+  });
+
   describe('sum', () => {});
 });
