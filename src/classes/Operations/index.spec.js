@@ -62,5 +62,6 @@ describe('Operation', () => {
     const result = Operations.multiply(firstComplex, secondComplex);
     expect(result).toEqual(new ComplexNumber('(3,4)'));
   });
+
   describe('sum', () => {});
 });
